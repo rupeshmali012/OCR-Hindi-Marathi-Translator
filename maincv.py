@@ -5,16 +5,16 @@ from PIL import Image, ImageTk
 from paddleocr import PaddleOCR
 import pyperclip # For the Copy button
 
-# --- English OCR Model Ko Pehle Hi Load Kar Lete Hain ---
+# English OCR Model Ko Pehle Hi Load Kar Lete Hain
 print("Loading English OCR model... Please wait.")
 # Model ab hamesha English hi rahega
 ocr_model = PaddleOCR(lang='en') 
 print("Model loaded successfully!")
 
-# --- Global Variables ---
+# Global Variables
 file_path = ""
 
-# --- Functions ---
+# Functions
 
 def select_image():
     """Lets the user select an image and shows a preview."""
@@ -95,7 +95,7 @@ def copy_text():
     if text_to_copy.strip():
         pyperclip.copy(text_to_copy)
 
-# --- GUI Setup ---
+# GUI Setup
 window = tk.Tk()
 window.title("Image Text Translator") # Title bhi update kar diya
 window.geometry("900x750")
@@ -107,7 +107,7 @@ main_frame.pack(fill=tk.BOTH, expand=True)
 image_label = ttk.Label(main_frame, text="Please select an English image to view here", background="#ffffff", borderwidth=2, relief="solid", anchor="center")
 image_label.pack(pady=10, fill="both", expand=True)
 
-# === OCR Language selection wala frame HATA DIYA GAYA HAI ===
+# OCR Language selection wala frame HATA DIYA GAYA HAI
 
 # Action buttons
 button_frame = ttk.Frame(main_frame)
@@ -140,4 +140,5 @@ result_text = tk.Text(main_frame, height=10, width=80, wrap=tk.WORD, font=("Sego
 result_text.pack(pady=10, fill="both", expand=True)
 
 # --- Start Application ---
+
 window.mainloop()
